@@ -4,9 +4,13 @@ import json
 import os
 import logging
 import datetime
+from win10toast import ToastNotifier
 
 date = datetime.datetime.now()
 date = date.strftime("%Y_%m_%d_%H_%M")
+
+toast = ToastNotifier()
+toast.show_toast("Plugins Navisworks","Atualizando plugins do Navisworks", duration=10)
 
 try:
     logging.basicConfig(filename='log\\'+date+'.log', filemode="w" ,level=logging.DEBUG)
